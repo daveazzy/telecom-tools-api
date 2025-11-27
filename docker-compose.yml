@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://telecom_yF5atXmRptU:6oDipOMQlTEcoUSrwwafCQ@db:5432/telecom_db
+      - DATABASE_URL=postgresql://telecom_user:telecom_pass@db:5432/telecom_db
       - SECRET_KEY=${SECRET_KEY:-change-me-in-production}
       - OPENCELLID_API_KEY=${OPENCELLID_API_KEY:-}
     volumes:
@@ -23,8 +23,8 @@ services:
     image: postgres:15-alpine
     container_name: telecom-db
     environment:
-      - POSTGRES_USER=telecom_yF5atXmRptU
-      - POSTGRES_PASSWORD=6oDipOMQlTEcoUSrwwafCQ
+      - POSTGRES_USER=telecom_user
+      - POSTGRES_PASSWORD=telecom_pass
       - POSTGRES_DB=telecom_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -39,8 +39,8 @@ services:
     image: dpage/pgadmin4:latest
     container_name: telecom-pgadmin
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@telecom-api.com
-      - PGADMIN_DEFAULT_PASSWORD=telecom_admin_secure_2025
+      - PGADMIN_DEFAULT_EMAIL=admin@telecom.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
     ports:
       - "5050:80"
     depends_on:
