@@ -4,11 +4,6 @@ from pydantic_settings import BaseSettings
 from typing import Optional, List
 import os
 
-# Remove os.environ DATABASE_URL para forçar uso do .env
-if "DATABASE_URL" in os.environ:
-    if "schema=" in os.environ.get("DATABASE_URL", ""):
-        del os.environ["DATABASE_URL"]
-
 
 class Settings(BaseSettings):
     """Application settings and configuration"""

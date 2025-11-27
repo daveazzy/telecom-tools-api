@@ -31,9 +31,18 @@ app.add_middleware(
 @app.on_event("startup")
 async def startup_event():
     """Initialize database on startup"""
-    init_db()
-    print(f"[STARTUP] {settings.PROJECT_NAME} v{settings.VERSION} started successfully!")
-    print(f"[INFO] API Documentation: http://localhost:8000/docs")
+    try:
+        print(f"[STARTUP] Initializing {settings.PROJECT_NAME} v{settings.VERSION}...")
+        print(f"[STARTUP] Environment: {settings.ENVIRONMENT}")
+        print(f"[STARTUP] Database type: {'PostgreSQL' if 'postgresql' in settings.DATABASE_URL else 'SQLite'}")
+        init_db()
+        print(f"[STARTUP] Database initialized successfully!")
+        print(f"[STARTUP] {settings.PROJECT_NAME} v{settings.VERSION} started successfully!")
+        print(f"[INFO] API Documentation: /docs")
+    except Exception as e:
+        print(f"[ERROR] Failed to initialize database: {e}")
+        print(f"[ERROR] Database URL pattern: {settings.DATABASE_URL[:30]}...")
+        raise
 
 
 @app.on_event("shutdown")
