@@ -1,0 +1,37 @@
+# FastAPI and Web Framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.20
+
+# Database
+sqlalchemy>=2.0.36
+alembic>=1.14.0
+psycopg2-binary>=2.9.10  # PostgreSQL driver (needed for Railway/production)
+
+# Authentication and Security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.0.0,<5.0.0
+python-dotenv>=1.0.1
+pydantic-settings>=2.6.0
+
+# HTTP Client
+httpx>=0.28.0
+requests>=2.31.0  # Para HEALTHCHECK e integracoes externas
+
+# Scientific Computing (optional - install pre-built wheels if needed)
+# numpy==1.26.2
+# scipy==1.11.4
+# For Windows: pip install numpy scipy (will get latest compatible versions)
+
+# Data Validation
+pydantic>=2.10.0
+email-validator>=2.3.0
+
+# Utilities
+python-dateutil>=2.9.0
+
+# Optional: PDF/Report Generation
+# reportlab==4.0.7
+# matplotlib==3.8.2
+

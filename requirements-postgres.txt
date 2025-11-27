@@ -1,0 +1,10 @@
+# PostgreSQL support (only needed for production with PostgreSQL)
+# Install with: pip install -r requirements-postgres.txt
+
+psycopg2-binary==2.9.9
+
+# Note: On Windows, if you get compilation errors, you can:
+# 1. Use SQLite instead (default for development)
+# 2. Or install pre-compiled wheel from: https://www.lfd.uci.edu/~gohlke/pythonlibs/#psycopg
+# 3. Or use psycopg (version 3) instead: pip install psycopg[binary]
+

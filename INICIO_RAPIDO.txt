@@ -1,0 +1,91 @@
+================================================================================
+   TELECOMTOOLS SUITE - INÍCIO RÁPIDO
+================================================================================
+
+✅ TUDO PRONTO PARA USAR!
+
+================================================================================
+   PASSO 1: INICIAR O SERVIDOR
+================================================================================
+
+Opção A - Script Automático (Recomendado):
+    .\start.bat
+
+Opção B - Comando Manual:
+    python run.py
+
+Opção C - Com uvicorn:
+    uvicorn app.main:app --reload
+
+================================================================================
+   PASSO 2: ACESSAR A API
+================================================================================
+
+Abra seu navegador em:
+    http://localhost:8000/docs
+
+Ou teste no terminal:
+    curl http://localhost:8000/health
+
+================================================================================
+   PASSO 3: FAZER LOGIN
+================================================================================
+
+Na página http://localhost:8000/docs:
+
+1. Clique no botão "Authorize" (cadeado verde)
+2. Digite:
+   Username: admin@telecom.com
+   Password: admin123
+3. Clique em "Authorize"
+4. Pronto! Agora você pode testar todos os endpoints
+
+================================================================================
+   COMANDOS ÚTEIS
+================================================================================
+
+Popular banco com dados de teste:
+    python scripts\seed_database.py
+
+Resetar banco de dados:
+    del telecom.db
+    python scripts\init_db.py
+
+Ver estrutura do projeto:
+    tree /F app
+
+================================================================================
+   LINKS IMPORTANTES
+================================================================================
+
+API:            http://localhost:8000
+Documentação:   http://localhost:8000/docs  ⭐ COMECE AQUI
+ReDoc:          http://localhost:8000/redoc
+Health Check:   http://localhost:8000/health
+
+================================================================================
+   CREDENCIAIS PADRÃO
+================================================================================
+
+Email:    admin@telecom.com
+Senha:    admin123
+
+⚠️  IMPORTANTE: Mude essas credenciais em produção!
+
+================================================================================
+   PROBLEMAS?
+================================================================================
+
+Consulte: SOLUCAO_WINDOWS.md
+Ou:       START.md
+
+================================================================================
+   PRONTO PARA COMEÇAR!
+================================================================================
+
+Execute agora:  python run.py
+
+Depois acesse:  http://localhost:8000/docs
+
+Boa sorte! 🚀
+
