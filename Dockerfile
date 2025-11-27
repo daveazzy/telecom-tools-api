@@ -45,11 +45,15 @@ RUN mkdir -p uploads logs
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
-# Expose port
+# Expose port (Railway will inject the actual PORT via env var)
 EXPOSE 8000
+
+# Environment variables for Railway
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
 # Health check é gerenciado pelo Railway (via railway.toml)
 # Não usamos HEALTHCHECK interno para evitar conflitos de porta
 
-# Run the application via entrypoint script
-ENTRYPOINT ["/app/entrypoint.sh"]
+# Use CMD instead of ENTRYPOINT for better Railway compatibility
+CMD ["/app/entrypoint.sh"]
