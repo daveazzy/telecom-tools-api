@@ -6,4 +6,6 @@ dockerfilePath = "Dockerfile"
 healthcheckPath = "/health"
 healthcheckTimeout = 100
 restartPolicyType = "ON_FAILURE"
+startCommand = "/app/entrypoint.sh"
+
 
