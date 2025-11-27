@@ -48,10 +48,8 @@ RUN chmod +x /app/entrypoint.sh
 # Expose port
 EXPOSE 8000
 
-# Health check (Railway vai usar o healthcheckPath do railway.toml)
-# Este HEALTHCHECK interno é opcional, mas ajuda em testes locais
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+# Health check é gerenciado pelo Railway (via railway.toml)
+# Não usamos HEALTHCHECK interno para evitar conflitos de porta
 
 # Run the application via entrypoint script
 ENTRYPOINT ["/app/entrypoint.sh"]
