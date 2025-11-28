@@ -68,6 +68,9 @@ reports/
 *.pdf
 *.csv
 
+#exceptions
+!assets/*.csv
+
 # OS
 Thumbs.db
 .DS_Store
